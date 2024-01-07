@@ -1,0 +1,25 @@
+package week1.day1;
+
+public class Ifelse {
+
+	public static void main(String[] args) {
+		
+		int integer=45;
+		if(integer>0) {
+			System.out.println(integer+" is positive");
+			
+		}
+		else if(integer<0) {
+			System.out.println(integer+" is negative");
+			
+			
+		}
+		else {
+			System.out.println(integer+" is netural");
+			
+		}
+		
+		
+	}
+
+}
