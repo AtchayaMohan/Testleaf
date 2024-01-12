@@ -1,0 +1,32 @@
+package week1.Homeassigment;
+
+public class Palindrome {
+
+	public static void main(String[] args) {
+	
+		int input1=121;
+		int output1=12345;
+		int temp=input1;
+		int rev=0,sum;
+		
+        for (int i=0;i>0;i++)
+        {
+        	sum=temp%10;
+        	rev=(rev*10)+sum;
+        	temp=temp/10;
+        	i=temp;
+        	
+        	
+        }
+        if(temp==output1)
+        {
+		System.out.println("Yes palindrome");
+		
+        }
+        else {
+        	System.err.println("No, the number is not palindrome");
+        }
+
+	}
+
+}
