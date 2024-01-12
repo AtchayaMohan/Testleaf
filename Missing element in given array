@@ -1,0 +1,32 @@
+package week1.Homeassigment;
+
+import java.util.Arrays;
+
+public class Missingelement {
+
+	public static void main(String[] args) {
+		
+		
+		int[] input={1,4,3,2,8,6,7}; 
+		Arrays.sort(input);
+	
+		
+		int temp=input.length;
+		
+		for(int i=1;i<=temp;i++)
+		{
+			
+			if(input[i-1]!=i)
+			{
+				System.out.println(i);
+				break;
+			}
+			
+		}
+		
+	
+		
+		}
+		
+
+	}
