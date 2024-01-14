@@ -1,0 +1,71 @@
+ackage week2day1;
+
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class selectclass {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		ChromeDriver d=new ChromeDriver ();
+        d.get("http://leaftaps.com/opentaps");
+        d.manage().window().maximize();
+        
+        WebElement username = d.findElement(By.id("username"));
+        username.sendKeys("demosalesmanager");
+        
+        WebElement password=d.findElement(By.id("password"));
+        password.sendKeys("crmsfa");
+        d.findElement(By.className("decorativeSubmit")).click();
+        
+        WebElement img=d.findElement(By.id("button"));
+        img.click();
+        
+        WebElement lead=d.findElement(By.linkText("Leads"));
+        lead.click();
+        
+        WebElement clead=d.findElement(By.linkText("Create Lead"));
+        clead.click();
+        
+        WebElement compname=d.findElement(By.id("createLeadForm_companyName"));
+        compname.sendKeys("Walmart");
+        
+        WebElement fname=d.findElement(By.id("createLeadForm_firstName"));
+        fname.sendKeys("Atchaya");  
+        
+        WebElement lname=d.findElement(By.id("createLeadForm_lastName"));
+        lname.sendKeys("Mohan");
+        
+        WebElement source=d.findElement(By.id("createLeadForm_dataSourceId"));
+        Select s=new Select(source);
+        s.selectByIndex(3);
+        
+        
+        WebElement campaign=d.findElement(By.id("createLeadForm_marketingCampaignId"));
+        Select s1=new Select(campaign);
+        s1.selectByVisibleText("Automobile");
+        
+        
+        WebElement ownership=d.findElement(By.id("createLeadForm_ownershipEnumId"));
+        Select s2=new Select(ownership);
+        s2.selectByValue("OWN_CCORP");
+  
+        WebElement createlead = d.findElement(By.className("smallSubmit"));
+        createlead.click();
+        Thread.sleep(2000);
+        
+       String title= d.getTitle();
+       System.out.println("Title of page is "+title);
+        
+        
+        d.close();
+        
+        
+	}
+
+}
